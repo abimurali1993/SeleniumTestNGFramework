@@ -3,6 +3,8 @@ package framework.testsdata;
 public class TestData {
 	
 	
+	//To Store the testData
+	
 	
 		public static String email="abilash.c11@getnada.com";
 		public static String firstName="Abilash";
