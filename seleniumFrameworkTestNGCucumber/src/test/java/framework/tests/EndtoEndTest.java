@@ -31,7 +31,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class EndtoEndTest extends DriverManager {
 	
-	@Test
+	@Test// Test for end 2 end flow
 	public void end2endFLow()
 	{
 		
