@@ -4,6 +4,7 @@ package framework.tests;
 import org.testng.annotations.Test;
 
 import framework.commons.DriverManager;
+import framework.commons.ExtentReporterNG;
 import framework.pom.ApplicationGeneric;
 import framework.pom.Homepage;
 import framework.pom.LoginPage;
@@ -44,6 +45,8 @@ public class LoginAddToCartFlowTest extends DriverManager {
 		applicationGeneric.openMiniCart();
 		applicationGeneric.verifyProductsInCart(TestData.productToAdd);
 		applicationGeneric.signOut();
+		
+		
 		
 	}
 

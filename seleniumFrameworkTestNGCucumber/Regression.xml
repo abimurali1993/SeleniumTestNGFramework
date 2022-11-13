@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
- <groups>
-	  <run>
-	  	<include name="sanity"></include>
-	  </run>
-  </groups>
-  <test thread-count="5" name="Test">
-    <classes>
-      <class name="framework.tests.VerifyLogin"/>
-      <class name="framework.tests.VerifyAddtoCart"/>
-      <class name="framework.tests.VerifyProfilePage"/>
-    </classes>
-  </test> <!-- Test -->
+
+	<groups>
+		<run>
+			<include name="Regression"></include>
+		</run>
+	</groups>
+	<listeners>
+		<listener class-name="framework.listeners.TestNGlisterners">
+		</listener>
+	</listeners>
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="framework.tests.EndtoEndTest" />
+			<class name="framework.tests.VerifyLogin" />
+			<class name="framework.tests.VerifyAddtoCart" />
+			<class name="framework.tests.VerifyProfilePage" />
+			<class name="framework.tests.LoginAddToCartFlowTest" />
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->

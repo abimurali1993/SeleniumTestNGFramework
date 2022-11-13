@@ -6,6 +6,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
 public class GenericFunctions {
 	
 	
@@ -19,4 +24,14 @@ public class GenericFunctions {
 		return value;
 	}
 
+
+	public String getScreenshot(String testName, WebDriver driver) throws IOException
+	{
+		TakesScreenshot screenshotObject=(TakesScreenshot)driver;
+		File src=screenshotObject.getScreenshotAs(OutputType.FILE);
+		File file= new File(System.getProperty("user.dir") +"//reports//" +testName +".png");
+		FileUtils.copyFile(src, file);
+		return System.getProperty("user.dir") +"//reports//" +testName +".png";
+	}
+	
 }

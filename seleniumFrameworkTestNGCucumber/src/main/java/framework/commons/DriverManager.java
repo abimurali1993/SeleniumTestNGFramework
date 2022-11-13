@@ -17,7 +17,7 @@ public class DriverManager {
 	
 	GenericFunctions generic= new GenericFunctions();
 	public static WebDriver driver;
-	public  WebDriver invokeBrowser() throws IOException
+	private  WebDriver invokeBrowser() throws IOException
 	{
 		
 		String browserName=generic.propertyReader("Browser");
@@ -25,7 +25,11 @@ public class DriverManager {
 		if(browserName.equalsIgnoreCase("chrome"))
 		{
 			ChromeOptions options= new ChromeOptions();
-			options.setAcceptInsecureCerts(true);
+			if(generic.propertyReader("Bypass").equalsIgnoreCase("true"))
+			{
+				options.setAcceptInsecureCerts(true);
+
+			}
 			WebDriverManager.chromedriver().setup();
 			driver= new ChromeDriver(options);
 		}
